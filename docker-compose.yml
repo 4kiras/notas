@@ -1,0 +1,20 @@
+version: "3"
+
+services:
+  # Servicio para la aplicación React
+  web:
+    # Build del contexto actual (donde se encuentra el Dockerfile)
+    build: .
+    # Mapear el puerto 3000 del contenedor al puerto 3000 del host
+    ports:
+      - "3000:3000"
+    # Montar el directorio actual como un volumen para reflejar los cambios en tiempo real
+    volumes:
+      - .:/app
+    # Definir la red para comunicación entre contenedores (si es necesario)
+    # networks:
+    #   - my-network
+
+# Opcional: Definir una red personalizada
+# networks:
+#   my-network:
