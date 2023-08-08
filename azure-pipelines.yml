@@ -20,10 +20,6 @@ steps:
     npm run build
   displayName: 'npm install and build'
 
-- task: AzureWebApp@1
-  displayName: 'Azure App Service Deploy'
-  inputs:
-    azureSubscription: 'Azure for Students'  # Cambiar por el nombre de tu conexión del servicio Azure
-    appName: 'NotasPractica11'            # Cambiar por el nombre de tu instancia de App Service
-    package: $(Build.ArtifactStagingDirectory)/build
-    appType: 'webApp'
+- script: |
+    npm test
+  displayName: 'Run Tests'
